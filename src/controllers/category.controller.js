@@ -43,4 +43,14 @@ router.patch("/:id/edit", async (req, res) => {
   }
 });
 
+//delete category by id
+router.delete("/:id/delete", async (req, res) => {
+  try {
+    const category = await Category.findByIdAndDelete(req.params.id).lean().exec();
+    return res.status(200).send({ categorydata: category});
+  } catch (error) {
+    res.status(500).send({error: error.message });
+  }
+});
+
 module.exports = router;
