@@ -47,8 +47,8 @@ router.patch("/:id/edit", async (req, res) => {
 router.get("/:id/addresses",async(req,res)=>{
   try {
       const user = await User.findById(req.params.id);
-      const addresses = user.Address;
-      return res.status(201).send({ data: addresses});
+      const Addresses = user.addresses;
+      return res.status(201).send({ data: Addresses});
   } 
   catch (error) {
       res.status(500).send({error: error.message });

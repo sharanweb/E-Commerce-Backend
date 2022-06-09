@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connect = ()=>{
-    return mongoose.connect("mongodb://127.0.0.1:27017/crud-ecommerce");
+    return mongoose.connect("mongodb+srv://sharnu:sharnu@cluster0.hkmba.mongodb.net/test");
 }
 
 module.exports = connect;
