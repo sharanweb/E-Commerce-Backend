@@ -43,6 +43,18 @@ router.patch("/:id/edit", async (req, res) => {
   }
 });
 
+//get all address of the particulat user
+router.get("/:id/addresses",async(req,res)=>{
+  try {
+      const user = await User.findById(req.params.id);
+      const addresses = user.Address;
+      return res.status(201).send({ data: addresses});
+  } 
+  catch (error) {
+      res.status(500).send({error: error.message });
+  }
+})
+
 //delete users by id
 router.delete("/:id/delete", async (req, res) => {
   try {
