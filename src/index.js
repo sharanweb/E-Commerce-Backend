@@ -8,7 +8,7 @@ app.use(cors());
 const usersController = require("./controllers/user.controller");
 const brandsController = require("./controllers/brand.controller");
 const productsController = require("./controllers/product.controller");
-const categoriesController = require("./controllers/categories.controller");
+const categoriesController = require("./controllers/category.controller");
 
 app.use("/users", usersController);
 app.use("/brands", brandsController);
