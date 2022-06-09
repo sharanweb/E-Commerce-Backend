@@ -74,6 +74,7 @@ router.patch("/:id/addresses/create", async (req, res) => {
 
 //delete a particular address of the user by address_id
 router.patch("/:id/addresses/:idx/edit", async (req, res) => {
+  //not working
   try {
     const delete_Add = await User.updateOne(
       { _id: req.params.id, "addresses._id": req.params.idx },
@@ -81,7 +82,7 @@ router.patch("/:id/addresses/:idx/edit", async (req, res) => {
     );
     if (delete_Add.acknowledged === true) {
       const user = await User.findById(req.params.id).lean().exec();
-      return res.status(201).send({ data: user.addresses, message: "success" });
+      return res.status(201).send({ data: user.addresses });
     }
     return res.status(404).send({ error: "something went wrong" });
   } catch (error) {
