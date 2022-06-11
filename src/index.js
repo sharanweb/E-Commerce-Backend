@@ -9,10 +9,12 @@ const usersController = require("./controllers/user.controller");
 const brandsController = require("./controllers/brand.controller");
 const productsController = require("./controllers/product.controller");
 const categoriesController = require("./controllers/category.controller");
+const userReviewController = require("./controllers/userReview.controller")
 
 app.use("/users", usersController);
 app.use("/brands", brandsController);
 app.use("/products", productsController);
 app.use("/categories", categoriesController);
+app.use("/userreviews", userReviewController)
 
 module.exports = app;

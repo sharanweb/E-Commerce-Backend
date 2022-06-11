@@ -82,7 +82,7 @@ router.patch("/:id/addresses/:idx/edit", async (req, res) => {
     );
     if (delete_Add.acknowledged === true) {
       const user = await User.findById(req.params.id).lean().exec();
-      return res.status(201).send({ data: user.addresses });
+      return res.status(201).send({ data: user.addresses});
     }
     return res.status(404).send({ error: "something went wrong" });
   } catch (error) {

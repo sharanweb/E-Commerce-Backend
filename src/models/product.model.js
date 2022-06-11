@@ -12,11 +12,11 @@ const productSchema = new mongoose.Schema(
       ref: "brand",
       required: false,
     },
-    categories: [
+    categories1: [
         {
             categories_id: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "categories",
+                ref: "category",
                 required: false,
             },
         }
